@@ -1,5 +1,5 @@
 <template>
-  <div class="row" style="border-bottom: 1px solid #ccc;">
+  <div class="row" :style="(load || active) ? `border-bottom: 1px solid #ccc;` : ''">
     <div class="col-12 header" v-if="(load || active)">
       <div class="row" style="align-items:center">
         <div class="col-2">
@@ -39,12 +39,21 @@
           Hệ thống giám sát
         </li>
         </router-link>
+        <router-link to="/decentralization">
+          <li class="menu-item" @click="change()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+              <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+            Phân quyền
+          </li>
+        </router-link>
         <router-link to="/data" >
           <li class="menu-item" @click="change()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                 <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
               </svg>
-              Thống kê lượt ra vào</li>
+              Thống kê</li>
         </router-link>
        
         <router-link to="/customer">
@@ -77,7 +86,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
               </svg>
-              Phân quyền</li>
+              Quản lý nhân viên</li>
         </router-link>
       </ul>
       

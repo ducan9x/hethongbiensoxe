@@ -52,22 +52,22 @@
             </div>
         </div>
     </div>
-    <loading v-model:active="isLoading"
+    <!-- <loading v-model:active="isLoading"
         :is-full-page="true"
         color="#0074bd"
-        />
+        /> -->
 </template>
 
 <script>
 import { ref,computed} from 'vue';
 import { useStore } from 'vuex';
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
+// import Loading from 'vue-loading-overlay';
+// import 'vue-loading-overlay/dist/vue-loading.css';
 export default {
     name: 'ListCustomer',
-    components:{
-        Loading
-    },
+    // components:{
+    //     Loading
+    // },
     setup() {
         const store = useStore();
         function getData(){
@@ -75,7 +75,7 @@ export default {
         }
         getData()
         const listCustomer = computed(() => store.getters.customers)
-        const isLoading = computed(() => listFilterd.value.length > 0 ? false : true);
+        // const isLoading = computed(() => listCustomer.value.length > 0 ? false : true);
         const search = ref('')
         const listFilterd = computed(() => {
           let rs = listCustomer.value.filter(customer => customer.customer_name.includes(search.value)  || customer.license_plates.includes(search.value));
@@ -96,8 +96,7 @@ export default {
             editCustomer,
             customerDeleteItem,
             listFilterd,
-            
-            isLoading
+            // isLoading
         };
     },
 };

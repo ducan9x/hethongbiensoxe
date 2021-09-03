@@ -1,165 +1,200 @@
 <template>
-    <div class="home row">
-        <div class="col-md-6" v-if="dataTime.length > 0">
-            <h2 class="heading-content" style="text-align:center">
-                Thống kê theo giờ
-            </h2>
-            <Chart :chartData="dataTime" :options="charOptions" />
-        </div>
-        <div class="col-md-6">
-            <h3 class="heading-content">Thống kê</h3>
-
-            <div class="col-md-12 container-table">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">STT</th>
-                            <th scope="col">Thời gian</th>
-                            <th scope="col">Trạng thái</th>
-                            <th scope="col">Giá vé</th>
-                            <th scope="col">Biển kiểm soát</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="Vehical in ListVehical" :key="Vehical.id">
-                            <th scope="row">{{ stt++ }}</th>
-                            <td>{{ Vehical.date }}</td>
-                            <td>{{ Vehical.status }}</td>
-                            <td>{{ Vehical.card }} đ</td>
-                            <td>{{ Vehical.license_plates }}</td>
-                            
-                        </tr>
-                    </tbody>
-                </table>
+  <div class="row">
+      <div class="col-md-6">
+            <h3 class="heading-content">Làn vào</h3>
+            <div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="container-img">
+                            <h4 class="title-heading-img">
+                                Làn vào
+                            </h4>
+                            <div class="img">
+                                <img
+                                    src="/assets/img/bsvao.PNG"
+                                    alt="ảnh biển số xe vào"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="container-img">
+                            <h4 class="title-heading-img">
+                                Toàn cảnh ảnh làn vào
+                            </h4>
+                            <div class="img">
+                                <img
+                                    src="/assets/img/tcvao.PNG"
+                                    alt="ảnh toàn cảnh biển số xe vào"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-img information">
+                    <h3 class="title-heading-img">Thông tin xe vào</h3>
+                    <div class="information-content">
+                        <p class="lb-information" for="">
+                            Thời gian:<span class="data-information">
+                                17:30:24 09/08/2021
+                            </span>
+                        </p>
+                        <p class="lb-information" for="">
+                            Loại xe:
+                            <span class="data-information">
+                                Xe máy
+                            </span>
+                        </p>
+                        <p class="lb-information" for="">
+                            Màu xe:
+                            <span class="data-information">
+                                Đen đỏ
+                            </span>
+                        </p>
+                    </div>
+                    <div class="bsx">
+                        <span class="lb-information">Biển số xe:</span>
+                        <label for="">28B-293876</label>
+                    </div>
+                    <img
+                        class="bsx-img"
+                        src="/assets/img/bsx.png"
+                        alt="Biển số xe"
+                    />
+                </div>
+                <div class="container-img information">
+                    <h3 class="title-heading-img">Thông tin vé</h3>
+                    <div class="information-content">
+                        <p class="lb-information" >
+                            Loại vé:
+                            <span class="data-information">
+                                Vé ngày
+                            </span>
+                        </p>
+                        <p class="lb-information" >
+                            Giá vé:
+                            <span class="data-information">
+                                5000 VNĐ
+                            </span>
+                        </p>
+                        <p class="lb-information" >
+                            Hết hạn:
+                            <span class="data-information">
+                                22:00:00 09/08/2021
+                            </span>
+                        </p>
+                        <p class="lb-information" >
+                            Chủ xe:
+                            <span class="data-information">Nguyễn Văn A</span>
+                        </p>
+                        <p class="lb-information" >
+                            Biển số xe đăng ký:
+                            <span class="data-information">28B-293876</span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-6" v-if="dataDate.length > 0">
-            <h2 class="heading-content" style="text-align:center">
-                Thống kê theo ngày
-            </h2>
-            <Chart :chartData="dataDate" :options="charOptions" />
+    <div class="col-md-6">
+            <h3 class="heading-content">Làn ra</h3>
+            <div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="container-img">
+                            <h4 class="title-heading-img">
+                                Làn ra
+                            </h4>
+                            <div class="img">
+                                <img
+                                    src="/assets/img/bsra.PNG"
+                                    alt="ảnh biển số xe vào"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="container-img">
+                            <h4 class="title-heading-img">
+                                Toàn cảnh ảnh làn ra
+                            </h4>
+                            <div class="img">
+                                <img
+                                    src="/assets/img/tcra.PNG"
+                                    alt="ảnh toàn cảnh biển số xe ra"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-img information">
+                    <h3 class="title-heading-img">Thông tin xe ra</h3>
+                    <div class="information-content">
+                        <p class="lb-information">
+                            Thời gian:<span class="data-information">
+                                17:30:24 09/08/2021
+                            </span>
+                        </p>
+                        <p class="lb-information">
+                            Loại xe:
+                            <span class="data-information">Xe máy</span>
+                        </p>
+                        <p class="lb-information">
+                            Màu xe:
+                            <span class="data-information">
+                                Đen đỏ
+                            </span>
+                        </p>
+                    </div>
+                    <div class="bsx">
+                        <span class="lb-information">Biển số xe vào:</span>
+                        <label>28B-293876</label>
+                    </div>
+                    <div class="bsx">
+                        <span class="lb-information">Biển số xe ra:</span>
+                        <label>28B-293876</label>
+                    </div>
+
+                    <p class="lb-information">
+                        So khớp:
+                        <span class="data-information" style="color:green">
+                            Biển số giống nhau
+                        </span>
+                    </p>
+                    <div class="match-license-platses row">
+                        <div class="col-6">
+                            <p class="title-img-match">
+                                Ảnh biển vào
+                            </p>
+                            <img
+                                class="bsx-img"
+                                src="/assets/img/bsx.PNG"
+                                alt="Biển số xe"
+                            />
+                        </div>
+                        <div class="col-6">
+                            <p class="title-img-match">
+                                Ảnh biển ra
+                            </p>
+                            <img
+                                class="bsx-img"
+                                src="/assets/img/bsx.PNG"
+                                alt="Biển số xe"
+                            />
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-        <div class="col-md-6" v-if="dataVehicles.length > 0">
-            <h2 class="heading-content" style="text-align:center">
-                Thống kê các loại xe
-            </h2>
-            <PieChart :chartData="dataVehicles" :options="charOptions" />
-        </div>
-    </div>
+  </div>
 </template>
 
 <script>
-import { reactive,computed} from 'vue';
-import { useStore } from 'vuex';
-// @ is an alias to /src
-// import moment from "moment";
-import PieChart from "../components/PieChart";
-import Chart from '../components/Chart';
-
 export default {
-    name: 'Home',
-    components: {
-        Chart,
-        PieChart
-    },
-    setup() {
-        const store = useStore();
-
-         const stt = 1;
-       
-        const ListVehical = computed(() => store.getters.datas);
-        
-
-
-        
-
-
-        const dataDate = reactive([]);
-        const dataTime = reactive([]);
-        const charOptions = {
-            responsive: true,
-            maintainAspectRatio: false
-        };
-        const dataLaneIn = store.getters.laneIn.reduce((r, a) => {
-            r[a.date] = [...(r[a.date] || []), a];
-            return r;
-        }, {});
-        const dataLaneOut = store.getters.laneOut.reduce((r, a) => {
-            r[a.date] = [...(r[a.date] || []), a];
-            return r;
-        }, {});
-        const dt = Object.keys(dataLaneIn)
-        for (let i = 0; i < dt.length; i++) {
-            const date = dt[i];
-            const countIn = dataLaneIn.[dt[i]].length
-            const countOut = dataLaneOut.[dt[i]].length
-            dataDate.unshift({date, total: {countIn:countIn,countOut:countOut}})
-        }
-
-
-        // Time
-        const dataTimeLane = store.getters.datas.reduce((r, a) => {
-            r[a.time] = [...(r[a.time] || []), a];
-            return r;
-        }, {});
-        const dataTimeLaneIn = store.getters.laneIn.reduce((r, a) => {
-            r[a.time] = [...(r[a.time] || []), a];
-            return r;
-        }, {});
-
-        const dataTimeLaneOut = store.getters.laneOut.reduce((r, a) => {
-            r[a.time] = [...(r[a.time] || []), a];
-            return r;
-        }, {});
-        const dtTime = Object.keys(dataTimeLane)
-        for (let i = 1; i < dtTime.length; i++) {
-            const date = dtTime[i];
-            let countTimeIn = 0
-            let countTimeOut = 0
-            if(dataTimeLaneIn.[dtTime[i]]){
-              countTimeIn = dataTimeLaneIn.[dtTime[i]].length
-            }
-            if(dataTimeLaneOut.[dtTime[i]]){
-              countTimeOut = dataTimeLaneOut.[dtTime[i]].length
-            }
-            // console.log(i)
-            dataTime.unshift({date, total: {countIn:countTimeIn,countOut:countTimeOut}})
-        }
-
-
-        //Vehicle total
-        const dataVehicles = reactive([])
-        const dataVehicle = ListVehical.value.reduce((r, a) => {
-            r[a.vehicle] = [...(r[a.vehicle] || []), a];
-            return r;
-        }, {});
-        const dtVehicle = Object.keys(dataVehicle)
-        for (let i = 0; i < dtVehicle.length; i++) {
-            const vehicle = dtVehicle[i]
-            const vehiclett = dataVehicle.[dtVehicle[i]].length
-            dataVehicles.unshift({vehicle, total: vehiclett})
-        }
-
-        return {
-            store,
-            stt,
-            ListVehical,
-            dataLaneIn,
-            dataLaneOut,
-            charOptions,
-            dataTimeLaneIn,
-            dataTimeLaneOut,
-            dataTime,
-            dataVehicle,
-            dataVehicles,
-            dataDate,
-        };
-    },
-};
-</script>
-<style scoped>
-.container-table {
-    max-height: 364px;
+    name:'Home'
 }
+</script>
+
+<style>
+
 </style>

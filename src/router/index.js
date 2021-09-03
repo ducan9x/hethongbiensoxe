@@ -19,7 +19,7 @@ const routes = [
         path: '/data',
         name: 'Data',
         component: () =>
-            import('../views/Data.vue'),
+            import('../views/Statistical.vue'),
     },
     {
         path: '/customer',
@@ -72,6 +72,18 @@ const routes = [
         name: 'BlackList',
         component: () =>
             import('../views/BlackList.vue'),
+    },
+    {
+        path: '/decentralization/editor',
+        name: 'Decentralization',
+        component: () =>
+            import('../views/Decentralization.vue'),
+    },
+    {
+        path: '/decentralization',
+        name: 'ListDecentralization',
+        component: () =>
+            import('../views/ListDecentralization.vue'),
     }
 ];
 

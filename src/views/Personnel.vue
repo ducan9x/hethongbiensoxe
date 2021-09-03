@@ -11,8 +11,9 @@
                       <tr>
                         <th scope="col">STT</th>
                         <th scope="col">Họ và tên</th>
-                        <th scope="col">username</th>
-                        <th scope="col">password</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Level</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
@@ -20,9 +21,13 @@
                       <tr v-for="(list,index) in listPersonel" :key="index">
                         <th scope="row">{{index + 1}}</th>
                         <td>{{list.full_name}}</td>
-                        <td>{{list.username}}</td>
-                        <td>{{list.password}}</td>
-                        <td><router-link to="editpersonel" @click="editPerson(list.username)" class="btn btn-info">Sửa</router-link><button class="btn btn-danger delete" @click="personDeleteItem(list.username)"  href="">Xóa</button></td>
+                        <td>{{list.mail}}</td>
+                        <td>{{list.address}}</td>
+                        <td>{{list.level}}</td>
+                        <td style="display: flex;justify-content: center;">
+                          <router-link to="editpersonel" @click="editPerson(list.username)" class="btn btn-info">Sửa</router-link>
+                          <button class="btn btn-danger delete" @click="personDeleteItem(list.username)"  href="">Xóa</button>
+                        </td>
                       </tr>
                       
                     </tbody>
@@ -32,14 +37,23 @@
             </div>
 
           </div>
+      <!-- <loading v-model:active="isLoading"
+        :is-full-page="true"
+        color="#0074bd"
+        /> -->
 </template>
 
 <script>
 
 import { computed } from 'vue';
 import { useStore } from "vuex";
+// import Loading from 'vue-loading-overlay';
+// import 'vue-loading-overlay/dist/vue-loading.css';
 export default {
   name:'Personel',
+    //   components:{
+    //     Loading
+    // },
   setup(){
     const store = useStore()
     const listPersonel = computed(() => store.getters.personels)
@@ -59,7 +73,8 @@ export default {
       store,
       listPersonel,
       personDeleteItem,
-      editPerson
+      editPerson,
+      // isLoading
     }
   }
 }
