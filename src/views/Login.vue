@@ -62,6 +62,7 @@ export default {
                 })
                 .catch((e) => {
                     alert(e.response.data.message);
+                    this.isLoading = false;
                 });
         }
         return {

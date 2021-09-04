@@ -124,8 +124,8 @@
                     </div>
                 </div>
                 <div style="display:flex;justify-content:flex-end">
-                    <router-link to="/personnel" class="btn btn-primary me-4" @click="savePerson">Cập nhật</router-link>
-                <router-link to="/personnel" class="btn btn-primary">Đóng</router-link>
+                    <router-link to="/decentralization" class="btn btn-primary me-4" @click="savePerson">Cập nhật</router-link>
+                <router-link to="/decentralization" class="btn btn-primary">Đóng</router-link>
                 </div>
             </form>
         </div>
@@ -185,7 +185,7 @@ export default {
   content: '';
   display: block;
   position: absolute;
-  top: 2px;
+  top: 4px;
   left: 9px;
   width: 6px;
   height: 14px;

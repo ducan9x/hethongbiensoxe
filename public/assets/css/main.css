@@ -9,7 +9,11 @@
 .form-floating>.form-control:focus{
   padding-top: 10px;
 }
-
+svg{
+  height: auto;
+  width: 20px;
+  margin-right: 10px;
+}
 /* basic stylings ------------------------------------------ */
 body { 
   font-family: 'Roboto', sans-serif;
